@@ -6,69 +6,24 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*\\.(js|css|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot|json|webp))",
-      "dest": "/$1"
-    },
-    {
-      "src": "^/pan-dulce-tradicional/?$",
-      "dest": "/pan-dulce-tradicional.html"
-    },
-    {
-      "src": "^/pasteleria-fina/?$",
-      "dest": "/pasteleria-fina.html"
-    },
-    {
-      "src": "^/bebidas-acompanamientos/?$",
-      "dest": "/bebidas-acompanamientos.html"
-    },
-    {
-      "src": "^/especiales-temporada/?$",
-      "dest": "/especiales-temporada.html"
-    },
-    {
-      "src": "^/sobre-nosotros/?$",
-      "dest": "/sobre-nosotros.html"
-    },
-    {
-      "src": "^/panes-artesanales/?$",
-      "dest": "/panes-artesanales.html"
-    },
-    {
-      "src": "^/cookies/?$",
-      "dest": "/cookies.html"
-    },
-    {
-      "src": "^/index\\.html$",
-      "status": 301,
-      "headers": { "Location": "/" }
-    },
-    {
-      "src": "^/(.*)$",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/pan-dulce-tradicional", "destination": "/pan-dulce-tradicional.html" },
+    { "source": "/pasteleria-fina", "destination": "/pasteleria-fina.html" },
+    { "source": "/bebidas-acompanamientos", "destination": "/bebidas-acompanamientos.html" },
+    { "source": "/especiales-temporada", "destination": "/especiales-temporada.html" },
+    { "source": "/sobre-nosotros", "destination": "/sobre-nosotros.html" },
+    { "source": "/panes-artesanales", "destination": "/panes-artesanales.html" },
+    { "source": "/cookies", "destination": "/cookies.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
     }
   ]
